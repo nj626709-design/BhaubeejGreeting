@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Bhau Beej | Dear Brother ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  font-family:'Poppins',sans-serif;
+  color:#fff5e9;
+  background:radial-gradient(ellipse at top,#702c39,#350e1c 65%,#200811);
+  overflow-x:hidden;
+}
+
+.particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+
+.petal{
+  position:absolute;top:-30px;color:#f1c37c;
+  animation:fall linear infinite;opacity:.7
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+
+.container{
+  position:relative;z-index:1;
+  width:min(92%,620px);
+  margin:auto;padding:45px 0 25px;
+  text-align:center;min-height:100vh;
+  display:flex;flex-direction:column;
+}
+
+.screen{display:none;animation:appear .8s ease both;flex:1}
+.screen.active{display:flex;flex-direction:column;justify-content:center}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.ornament{color:#e9bd76;font-size:25px;letter-spacing:12px;margin-bottom:20px}
+
+.small-title{
+  color:#e9c48c;font-size:11px;
+  text-transform:uppercase;letter-spacing:4px
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(43px,9vw,65px);
+  line-height:1.15;color:#ffe5b4;margin:20px 0
+}
+
+h1 span{color:#e9b76e}
+
+.heading{
+  font-family:'Playfair Display',serif;
+  color:#ffe2ae;font-size:clamp(30px,7vw,42px);
+  margin:18px 0
+}
+
+.subtitle{
+  color:#f4ddce;font-size:14px;
+  line-height:2;max-width:470px;margin:12px auto
+}
+
+.divider{color:#d6a55e;margin:25px;letter-spacing:8px}
+
+.diya-area{display:flex;justify-content:center;gap:35px;margin:25px 0}
+
+.diya{
+  font-size:48px;
+  filter:drop-shadow(0 0 15px #ffb43c);
+  animation:glow 1.5s infinite alternate
+}
+
+@keyframes glow{
+  from{transform:scale(.95);filter:drop-shadow(0 0 8px orange)}
+  to{transform:scale(1.12);filter:drop-shadow(0 0 22px gold)}
+}
+
+button{
+  border:1px solid #f2c77d;
+  background:linear-gradient(135deg,#f0c37b,#c78a40);
+  color:#35111b;padding:15px 30px;
+  border-radius:50px;font-family:inherit;
+  font-weight:600;font-size:14px;
+  cursor:pointer;transition:.3s;margin-top:15px
+}
+
+button:hover{transform:translateY(-3px);box-shadow:0 8px 25px #e9b45b55}
+
+.secondary{background:transparent;color:#f5d9a8;box-shadow:none}
+
+.message{
+  border:1px solid #d6a45b77;
+  background:#ffffff0b;border-radius:20px;
+  padding:27px 23px;margin:24px 0;
+  text-align:left;line-height:2;
+  font-size:14px;color:#f9e8d9
+}
+
+.message p{margin-bottom:13px}
+
+.message .dear{
+  font-family:'Playfair Display',serif;
+  font-size:24px;color:#f4c879
+}
+
+.signature{
+  text-align:right;font-family:'Playfair Display',serif;
+  color:#edc17d;font-size:20px;margin-top:20px
+}
+
+/* TILAK CEREMONY */
+
+.ritual-stage{
+  width:290px;height:270px;
+  position:relative;margin:15px auto 20px;
+}
+
+.face{
+  position:absolute;left:50%;top:8px;
+  transform:translateX(-50%);
+  width:155px;height:190px;
+  background:linear-gradient(140deg,#f7c99d,#d99569);
+  border-radius:48% 48% 45% 45%;
+  box-shadow:inset -10px -5px 15px #9e523c33,0 0 30px #eab76b22;
+}
+
+.hair{
+  position:absolute;top:-8px;left:-3px;
+  width:161px;height:70px;
+  border-radius:50% 50% 20% 20%;
+  background:#32151a;
+}
+
+.eyes{
+  position:absolute;top:91px;left:39px;
+  display:flex;gap:37px;
+}
+
+.eyes span{
+  width:8px;height:8px;background:#35151b;
+  border-radius:50%;
+}
+
+.nose{
+  position:absolute;top:104px;left:73px;
+  width:8px;height:12px;
+  border-right:2px solid #ad6b52;
+  border-radius:50%;
+}
+
+.smile{
+  position:absolute;top:128px;left:62px;
+  width:32px;height:15px;
+  border-bottom:3px solid #9e4d4d;
+  border-radius:50%;
+}
+
+.forehead{
+  position:absolute;top:68px;left:70px;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:#f2c394;
+}
+
+.tilak-dot{
+  position:absolute;top:67px;left:75px;
+  width:7px;height:0;
+  border-radius:50%;
+  background:#b30d25;
+  opacity:0;
+  transition:.4s;
+}
+
+.arm{
+  position:absolute;right:-100px;top:135px;
+  font-size:83px;
+  transform:rotate(-25deg);
+  opacity:0;
+  z-index:3;
+}
+
+.ritual-stage.apply .arm{
+  animation:applyHand 3s ease-in-out forwards;
+}
+
+@keyframes applyHand{
+  0%{right:-100px;top:140px;opacity:0;transform:rotate(-35deg)}
+  15%{opacity:1}
+  48%{right:77px;top:45px;transform:rotate(-15deg)}
+  65%{right:77px;top:45px;transform:rotate(-15deg)}
+  85%{right:-15px;top:105px;opacity:1}
+  100%{right:-100px;top:140px;opacity:0}
+}
+
+.apply .tilak-dot{
+  animation:showTilak .6s ease 1.7s forwards;
+}
+
+@keyframes showTilak{
+  from{height:0;opacity:0;transform:scale(.3)}
+  to{height:19px;opacity:1;transform:scale(1)}
+}
+
+.ritual-message{
+  color:#f4c878;font-size:14px;
+  line-height:1.9;min-height:50px;
+  margin:12px auto
+}
+
+.heart{
+  font-size:38px;
+  display:inline-block;
+  animation:heartbeat 1.2s infinite
+}
+
+@keyframes heartbeat{50%{transform:scale(1.2)}}
+
+.footer{
+  margin-top:35px;font-size:10px;
+  color:#d7bda6;letter-spacing:2px
+}
+
+@media(max-width:400px){
+  .ritual-stage{transform:scale(.9);margin-top:0;margin-bottom:0}
+  .message{padding:20px 17px}
+}
+
+
+/* BEAUTIFUL BHAU BEEJ PUJA SCENE */
+
+.puja-scene {
+  width: min(100%, 420px);
+  margin: 5px auto;
+  overflow: hidden;
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 50% 45%,
+      #793b43 0%, #51202f 70%, #38111f 100%);
+  border: 1px solid #e8b86e55;
+  box-shadow: 0 12px 40px #17050d66;
+}
+
+.ritual-svg {
+  width: 100%;
+  display: block;
+}
+
+.sister-hand {
+  transform: translate(145px, 30px);
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.puja-scene.apply .sister-hand {
+  animation: sisterTilak 3.2s ease-in-out forwards;
+}
+
+@keyframes sisterTilak {
+  0% {
+    transform: translate(145px, 30px);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  48%, 65% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  88% {
+    transform: translate(145px, 30px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(145px, 30px);
+    opacity: 0;
+  }
+}
+
+.tilak-mark {
+  transition: all .5s ease;
+}
+
+.puja-scene.apply .tilak-mark {
+  animation: tilakAppear .6s ease 1.65s forwards;
+}
+
+@keyframes tilakAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    ry: 15px;
+  }
+}
+
+.kumkum {
+  filter: drop-shadow(0 0 5px #e43a48);
+}
+
+.ritual-message {
+  min-height: 55px;
+  color: #f4d29a;
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 12px auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="particles" id="particles"></div>
+
+<main class="container">
+
+<!-- PAGE 1: WELCOME -->
+<section class="screen active" id="welcome">
+
+  <div class="ornament">✦ ❋ ✦</div>
+  <p class="small-title">A little surprise from your sister</p>
+
+  <h1>Happy<br><span>Bhau Beej</span></h1>
+
+  <p class="subtitle">
+    Dear Brother, I wish I could be there with you today.
+    I miss our little fights, silly conversations and all
+    those moments that make our bond special.
+  </p>
+
+  <div class="divider">✧ ❖ ✧</div>
+
+  <div class="diya-area">
+    <div class="diya">🪔</div>
+    <div class="diya">🪔</div>
+    <div class="diya">🪔</div>
+  </div>
+
+  <p class="subtitle">
+    Today, I have brought a little piece of my love
+    all the way to you. ❤️
+  </p>
+
+  <button onclick="showScreen('tilak')">
+    Let's Celebrate Together ✨
+  </button>
+
+</section>
+
+
+<!-- PAGE 2: VIRTUAL TILAK -->
+
+<section class="screen" id="tilak">
+
+  <div class="ornament">✦ ❋ ✦</div>
+  <p class="small-title">A sister's love and blessings</p>
+  <h2 class="heading">A Tilak From My Heart</h2>
+
+  <p class="subtitle">
+    Even though I cannot be there beside you,
+    let me celebrate this beautiful moment with you.
+  </p>
+
+  <div class="puja-scene" id="pujaScene">
+
+    <svg viewBox="0 0 420 340" class="ritual-svg"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <linearGradient id="skin" x2="1" y2="1">
+          <stop stop-color="#f8c99f"/>
+          <stop offset="1" stop-color="#d99570"/>
+        </linearGradient>
+        <linearGradient id="dress" x2="0" y2="1">
+          <stop stop-color="#e8b86e"/>
+          <stop offset="1" stop-color="#a85c43"/>
+        </linearGradient>
+        <linearGradient id="handSkin" x2="1" y2="1">
+          <stop stop-color="#ffe0c4"/>
+          <stop offset="1" stop-color="#d99570"/>
+        </linearGradient>
+        <radialGradient id="tilakGlow">
+          <stop stop-color="#ed283c"/>
+          <stop offset="1" stop-color="#a90020"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Shoulders and clothes -->
+      <path d="M75 340 Q85 255 155 245
+               L265 245 Q335 255 345 340Z"
+            fill="url(#dress)"/>
+
+      <path d="M155 245 L210 305 L265 245"
+            fill="none" stroke="#f5d49a" stroke-width="4"/>
+
+      <!-- Neck -->
+      <path d="M177 215 L177 264 Q210 288 243 264
+               L243 215Z" fill="url(#skin)"/>
+
+      <!-- Ears -->
+      <ellipse cx="123" cy="151" rx="19" ry="31" fill="#d99570"/>
+      <ellipse cx="297" cy="151" rx="19" ry="31" fill="#d99570"/>
+
+      <!-- Face -->
+      <path d="M130 92 Q130 48 210 48
+               Q290 48 290 92
+               L290 171 Q286 246 210 251
+               Q134 246 130 171Z"
+            fill="url(#skin)"/>
+
+      <!-- Hair -->
+      <path d="M125 113 Q112 45 171 34
+               Q251 10 294 58
+               Q311 80 292 119
+               Q280 103 274 88
+               Q247 112 208 101
+               Q163 96 125 113Z"
+            fill="#28151b"/>
+
+      <!-- Hair detail -->
+      <path d="M151 65 Q183 34 223 44"
+            fill="none" stroke="#523039"
+            stroke-width="5" stroke-linecap="round"/>
+
+      <!-- Eyebrows -->
+      <path d="M157 132 Q174 123 188 132"
+            fill="none" stroke="#56312c" stroke-width="4"
+            stroke-linecap="round"/>
+      <path d="M232 132 Q247 123 264 132"
+            fill="none" stroke="#56312c" stroke-width="4"
+            stroke-linecap="round"/>
+
+      <!-- Eyes -->
+      <ellipse cx="174" cy="151" rx="5" ry="4" fill="#352027"/>
+      <ellipse cx="247" cy="151" rx="5" ry="4" fill="#352027"/>
+
+      <!-- Nose -->
+      <path d="M210 151 Q204 176 210 180"
+            fill="none" stroke="#b8785d" stroke-width="3"
+            stroke-linecap="round"/>
+
+      <!-- Smile -->
+      <path d="M194 198 Q210 210 227 198"
+            fill="none" stroke="#9d4d4c" stroke-width="3"
+            stroke-linecap="round"/>
+
+      <!-- Forehead tilak base -->
+      <ellipse cx="210" cy="109" rx="9" ry="0"
+               fill="url(#tilakGlow)" class="tilak-mark"/>
+
+      <!-- Sister's arm and hand -->
+      <g class="sister-hand">
+
+        <!-- Forearm -->
+        <path d="M380 310 Q343 260 298 208
+                 Q276 184 255 150"
+              fill="none" stroke="url(#handSkin)"
+              stroke-width="36" stroke-linecap="round"/>
+
+        <!-- Wrist bangles -->
+        <path d="M323 242 L342 228"
+              stroke="#d9a04f" stroke-width="5"
+              stroke-linecap="round"/>
+        <path d="M330 251 L349 237"
+              stroke="#f7d58e" stroke-width="4"
+              stroke-linecap="round"/>
+
+        <!-- Palm -->
+        <path d="M245 156 Q224 147 224 126
+                 L227 91 Q229 80 237 84
+                 Q244 87 241 112
+                 L246 72 Q248 61 256 65
+                 Q263 67 259 113
+                 L264 78 Q267 68 275 73
+                 Q282 77 275 120
+                 L283 96 Q289 86 296 94
+                 Q303 100 294 127
+                 L289 150 Q281 172 263 179Z"
+              fill="url(#handSkin)"
+              stroke="#c98769" stroke-width="1.5"/>
+
+        <!-- Finger detail -->
+        <path d="M237 93 Q238 104 239 111
+                 M253 77 Q253 96 252 109
+                 M272 85 Q269 101 268 115"
+              fill="none" stroke="#d79c7e"
+              stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Kumkum on fingertip -->
+        <circle cx="294" cy="94" r="5" fill="#bd1129"
+                class="kumkum"/>
+
+      </g>
+
+      <!-- Small decorative stars -->
+      <g fill="#f3c779" opacity=".9">
+        <path d="M65 150 L69 160 L79 164 L69 168 L65 178 L61 168 L51 164 L61 160Z"/>
+        <path d="M352 116 L355 124 L363 127 L355 130 L352 138 L349 130 L341 127 L349 124Z"/>
+      </g>
+
+    </svg>
+
+  </div>
+
+  <p class="ritual-message" id="ritualMessage">
+    A little love, a little kumkum, and endless blessings...
+  </p>
+
+  <button id="tilakButton" onclick="applyTilak()">
+    Apply Tilak ❤️
+  </button>
+
+  <button class="secondary"
+          onclick="showScreen('letter')">
+    Open My Letter 💌
+  </button>
+
+</section>
+
+
+<!-- PAGE 3: LETTER -->
+<section class="screen" id="letter">
+
+  <div class="ornament">✦ ❋ ✦</div>
+
+  <p class="small-title">Something I want you to know</p>
+
+  <h2 class="heading">Dear Brother ❤️</h2>
+
+  <div class="message">
+
+    <p class="dear">My Dearest Brother,</p>
+
+    Sometimes I wish distance didn't exist.
+    I wish I could celebrate this beautiful day
+    sitting beside you.
+
+    <p>
+    I don't always say it, but having you as my
+    brother is one of the most special blessings
+    in my life.
+    </p>
+
+    <p>
+    We may not talk every moment, and we may
+    have our own busy lives, but that will never
+    change how much you mean to me.
+    </p>
+
+    <p>
+    I pray that you achieve everything you dream of.
+    May your life always be filled with happiness,
+    good health, success and beautiful moments.
+    </p>
+
+    <p>
+    And whenever life gets difficult, remember
+    that you have a sister who will always believe
+    in you and stand by you.
+    </p>
+
+    <p class="signature">
+      Forever your sister,<br>
+      Sending you endless hugs ❤️
+    </p>
+
+  </div>
+
+  <button onclick="showScreen('final')">
+    There's One More Thing... 🎁
+  </button>
+
+</section>
+
+
+<!-- PAGE 4: FINAL SURPRISE -->
+<section class="screen" id="final">
+
+  <div class="ornament">✦ ❋ ✦</div>
+
+  <p class="small-title">One bond. Two hearts. No distance.</p>
+
+  <div style="font-size:65px;margin:20px">🪔 🌸 🪔</div>
+
+  <h1 style="font-size:clamp(40px,8vw,55px)">
+    My Forever<br><span>Favourite Brother</span>
+  </h1>
+
+  <div class="heart">❤️</div>
+
+  <p class="subtitle">
+    Maybe today I cannot tie anything on your wrist,
+    give you a hug or celebrate beside you.
+
+    <br><br>
+
+    But if love could travel, mine would already
+    be standing right next to you.
+
+    <br><br>
+
+    Wherever you go, whatever you do,
+    never forget that you have someone who
+    will always be proud to call you her brother.
+  </p>
+
+  <div class="divider">✧ ❖ ✧</div>
+
+  <h2 class="heading">Happy Bhau Beej! ❤️</h2>
+
+  <p style="color:#f0c37b;font-family:'Playfair Display';font-size:22px">
+    Love you, Dear Brother!
+  </p>
+
+  <p class="subtitle" style="margin-top:18px">
+    Distance is temporary. Our bond is forever. 🥹
+  </p>
+
+  <button class="secondary" onclick="showScreen('welcome')">
+    ↻ Experience Again
+  </button>
+
+</section>
+
+<footer class="footer">
+  MADE WITH LOVE · FROM YOUR SISTER ❤️
+</footer>
+
+</main>
+
+<script>
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>{
+    s.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+let done = false;
+
+function applyTilak() {
+  if (done) return;
+
+  done = true;
+
+  const scene = document.getElementById("pujaScene");
+  const message = document.getElementById("ritualMessage");
+  const button = document.getElementById("tilakButton");
+
+  scene.classList.remove("apply");
+  void scene.offsetWidth;
+  scene.classList.add("apply");
+
+  button.disabled = true;
+  button.textContent = "Sending Blessings...";
+
+  message.textContent =
+    "Applying a little tilak with lots of love... ❤️";
+
+  setTimeout(() => {
+    message.innerHTML =
+      "🪔 Tilak applied! May you always be protected, happy and successful. I am sending you the warmest hug! ❤️";
+
+    button.textContent = "Tilak Applied ❤️";
+    button.disabled = false;
+  }, 3300);
+}
+
+// Floating festive particles
+const particles = document.getElementById('particles');
+
+for(let i=0;i<30;i++){
+  const p=document.createElement('div');
+  p.className='petal';
+  p.innerHTML=['✦','✧','❋','🌸'][i%4];
+
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(7+Math.random()*10)+'s';
+  p.style.animationDelay=(-Math.random()*12)+'s';
+  p.style.fontSize=(10+Math.random()*14)+'px';
+
+  particles.appendChild(p);
+}
+</script>
+
+</body>
+</html>
